@@ -11,7 +11,7 @@ public class Citas {
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL_CONEXION = "jdbc:mysql://localhost:3306/datos";
     private static final String usuario = "root";
-    private static final String password = "1234";
+    private static final String password = "12345";
 	int id;
 	Date fecha;
 	String nombrePaciente;
@@ -65,7 +65,7 @@ public class Citas {
 		this.estado = estado;
 	}
 
-	// Métodos específicos de clase Citas (Listar, insertar, eliminar y actualizar datos en la tabla)
+	// Mï¿½todos especï¿½ficos de clase Citas (Listar, insertar, eliminar y actualizar datos en la tabla)
 	public void listarRegistro() {
     try {
         Class.forName(DRIVER);
@@ -222,10 +222,11 @@ public class Citas {
 		        
 		        preparedStatement = connection.prepareStatement(insertTableSQL);
 		      
-		        preparedStatement.setDate(2, citaIngresada.getFecha());
-		        preparedStatement.setString(3, citaIngresada.getNombrePaciente());
-		        preparedStatement.setNString(4, citaIngresada.getEstado());
 		        
+		        preparedStatement.setDate(1, citaIngresada.getFecha());
+		        preparedStatement.setString(2, citaIngresada.getNombrePaciente());
+		        preparedStatement.setNString(3, citaIngresada.getEstado());
+		        preparedStatement.setInt(4, citaIngresada.getId());
 	      
 		        int filasAfectadas = preparedStatement.executeUpdate();
 
