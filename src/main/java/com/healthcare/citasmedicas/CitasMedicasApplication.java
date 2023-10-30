@@ -43,10 +43,13 @@ public class CitasMedicasApplication {
 
 				System.out.print("Ingrese una fecha (en formato yyyy-MM-dd): ");
 				fechaString = sc.nextLine();
+
 				System.out.println("Ahora escriba el nombre completo del paciente: ");
 				nombre = sc.nextLine();
+
 				System.out.println("Por ultimo, establezca un estado para su cita (Pendiente, Confirmada, Cancelada): ");
 				estado = sc.nextLine();
+
 
 				try {
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
