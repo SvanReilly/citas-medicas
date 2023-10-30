@@ -8,10 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Citas {
-	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL_CONEXION = "jdbc:mysql://localhost:3306/datos";
-    private static final String usuario = "root";
-    private static final String password = "12345";
+	private static final String DRIVER = "org.h2.Driver";
+    private static final String URL_CONEXION = "jdbc:h2:C:/data/datosDefinitivo";
+    private static final String usuario = "Svan";
+    private static final String password = "1234";
 	int id;
 	Date fecha;
 	String nombrePaciente;
@@ -116,7 +116,7 @@ public class Citas {
 	    try {
 	        Class.forName(DRIVER);
 	        connection = DriverManager.getConnection(URL_CONEXION, usuario, password);
-	        String insertTableSQL = "INSERT INTO RESERVAS VALUES (ID, ?, ?, ?)";
+	        String insertTableSQL = "INSERT INTO RESERVAS VALUES ( ?, ?, ?)";
 	        
 	        
 	        preparedStatement = connection.prepareStatement(insertTableSQL);
