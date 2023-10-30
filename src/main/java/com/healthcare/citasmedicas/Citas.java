@@ -11,7 +11,7 @@ public class Citas {
 	private static final String DRIVER = "org.h2.Driver";
     private static final String URL_CONEXION = "jdbc:h2:C:/data/datosDefinitivo";
     private static final String usuario = "Svan";
-    private static final String password = "1234";
+    private static final String password = "";
 	int id;
 	Date fecha;
 	String nombrePaciente;
