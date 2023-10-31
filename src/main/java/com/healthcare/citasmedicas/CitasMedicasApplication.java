@@ -18,13 +18,13 @@ public class CitasMedicasApplication {
 		SpringApplication.run(CitasMedicasApplication.class, args);
 		Citas patientCheck = new Citas();
 		Scanner sc = new Scanner(System.in);
-		String cleaningCache="";
+		String cleaningCache = "";
 		String menu;
 		int IDIns = 0;
 		String fechaString;
 		java.sql.Date fecha = null;
-		String nombre="";
-		String estado="";
+		String nombre = "";
+		String estado = "";
 		boolean salir = true;
 
 		while (salir) {
@@ -47,9 +47,9 @@ public class CitasMedicasApplication {
 				System.out.println("Ahora escriba el nombre completo del paciente: ");
 				nombre = sc.nextLine();
 
-				System.out.println("Por ultimo, establezca un estado para su cita (Pendiente, Confirmada, Cancelada): ");
+				System.out
+						.println("Por ultimo, establezca un estado para su cita (Pendiente, Confirmada, Cancelada): ");
 				estado = sc.nextLine();
-
 
 				try {
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -69,7 +69,7 @@ public class CitasMedicasApplication {
 				try {
 					System.out.print("Para eliminar un registro inserte el ID de la cita: ");
 					IDIns = sc.nextInt();
-					cleaningCache=sc.nextLine();
+					cleaningCache = sc.nextLine();
 				} catch (NumberFormatException e) {
 					System.out.println("Por favor, inserte un valor numerico entero para el ID.");
 				}
@@ -82,12 +82,13 @@ public class CitasMedicasApplication {
 				try {
 					System.out.print("Para actualizar un registro inserte el ID de la cita a modificar: ");
 					IDIns = sc.nextInt();
-					cleaningCache=sc.nextLine();
+					cleaningCache = sc.nextLine();
 					System.out.print("Ingrese una fecha (en formato yyyy-MM-dd): ");
 					fechaString = sc.nextLine();
 					System.out.println("Ahora escriba el nombre completo del paciente: ");
 					nombre = sc.nextLine();
-					System.out.println("Por ultimo, establezca un estado para su cita (Pendiente, Confirmada, Cancelada):");
+					System.out.println(
+							"Por ultimo, establezca un estado para su cita (Pendiente, Confirmada, Cancelada):");
 					estado = sc.nextLine();
 
 					SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -99,7 +100,7 @@ public class CitasMedicasApplication {
 				} catch (ParseException e) {
 					System.out.println("Error al convertir fecha");
 				}
-				
+
 				patientCheck.modificarRegistro(IDIns, fecha, nombre, estado);
 				IDIns = 0;
 				break;
